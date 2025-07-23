@@ -58,27 +58,27 @@ body * {
 #switch {
   position: relative;
   width: 64px;
-
   margin: 4px auto;
+  z-index: 10;
 }
+
 #switch button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
-
   position: absolute;
-
   top: 50%;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   transform: translateY(-50%);
+  cursor: pointer;
+  transition: left 0.3s ease;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  left: calc(100% - 32px);
 }
 
 #switch span {
@@ -155,4 +155,14 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/*media queries*/
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }

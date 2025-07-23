@@ -82,6 +82,10 @@ body * {
   left: calc(100% - 32px);
 }
 
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
+}
+
 #switch span {
   display: block;
   width: 64px;
@@ -166,4 +170,8 @@ footer {
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
+}
+/*animation*(opcao mais facil para criar o deslizar do botao)/
+@keyframes slide-in{
+
 }

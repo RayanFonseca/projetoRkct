@@ -13,6 +13,7 @@ function toggleMode() {
   } else {
     //se tiver sem light mode, manter a img
     img.setAttribute("src", "./assets/avatarrayan.png")
+    img.setAttribute("alt", "foto de perfil")
   }
 
   localStorage.setItem(
@@ -23,16 +24,18 @@ function toggleMode() {
 
 window.onload = () => {
   const savedTheme = localStorage.getItem("theme")
-  if (savedTheme) {
-    const html = document.documentElement
-    html.classList.add(savedTheme)
-    const img = document.querySelector("#profile img")
-    if (savedTheme === "light") {
-      img.setAttribute("src", "./assets/brisola.png")
-      img.setAttribute("alt", "Foto do cuco de São Paulo")
-    } else {
-      img.setAttribute("src", "./assets/avatarrayan.png")
-      img.setAttribute("alt", "foto de perfil")
-    }
+  const html = document.documentElement
+  html.classList.remove("light")
+
+  if (savedTheme === "light") {
+    html.classList.add("light")
+  }
+  const img = document.querySelector("#profile img")
+  if (savedTheme === "light") {
+    img.setAttribute("src", "./assets/brisola.png")
+    img.setAttribute("alt", "foto do cuco")
+  } else {
+    img.setAttribute("src", "./assets/avatarrayan.png")
+    img.setAttribute("alt", "Foto de Perfil")
   }
 }
